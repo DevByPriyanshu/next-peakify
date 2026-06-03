@@ -6,7 +6,7 @@ const isPublicRoute = createRouteMatcher(["/", "/sign-up", "/sign-in"]);
 export default clerkMiddleware((auth, req: NextRequest) => {
   const { userId, orgId } = auth();
   const pathname = new URL(req.url).pathname;
-  const origin = req.headers.get('origin') || 'http://localhost:3000';
+  const origin = req.headers.get('origin') || 'https://next-peakify.vercel.app';
 
   console.log('Auth:', { userId, orgId }); // Debug log for auth object
   console.log('Request URL:', req.url); // Debug log for request URL
